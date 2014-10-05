@@ -12,9 +12,7 @@ exports.uploadFile = function(req, res, next) {
 	var target_path =  'uploads/'+ uploadedFile.name;
 
 	fs.rename(tmp_path, target_path, function(err) {
-	    // If an error is encountered, pass it to the next handler
 		if (err) { next(err); }
-	 	// Delete the temporary file
 		fs.unlink(tmp_path, function() {
 			if (err) { 
 				next(err); 
