@@ -1,8 +1,7 @@
 html
     head
-    title #{title}
+    title AppTest
     body
-    h1 #{title}
     p Enter your photo for OCR processing.
     div(id='error', style="width: 360px; height: 20px; border: 5px; background: white;")
     form(action='/uploadFile', method='post', enctype='multipart/form-data', id='form' target)
