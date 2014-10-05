@@ -2,7 +2,7 @@ var fs = require('fs');
 var tesseract = require('node-tesseract');
 
 exports.index = function(req, res){
- res.render('index');
+    res.render('index');
 };
 
 exports.uploadFile = function(req, res, next) {
@@ -10,6 +10,7 @@ exports.uploadFile = function(req, res, next) {
 	var uploadedFile = req.files.uploadedFile;
 	var tmp_path = uploadedFile.path;
 	var target_path =  'uploads/'+ uploadedFile.name;
+
 	fs.rename(tmp_path, target_path, function(err) {
 	    // If an error is encountered, pass it to the next handler
 		if (err) { next(err); }
@@ -19,11 +20,11 @@ exports.uploadFile = function(req, res, next) {
 				next(err); 
 			}
 			console.log('File uploaded to: ' + target_path + ' - ' + uploadedFile.size + ' bytes');
-			// Recognize text of any language in any format
+
 			tesseract.process(target_path, function(err, text) {
 			    if (err) {
-			        console.error(err);
-			    } else {	
+			        res.json({ "error" : "It was not possible to elaborate the image"});
+			    } else {
 					res.json({ "text" : text});
 				}
 			});

@@ -4,6 +4,7 @@ html
     body
     h1 #{title}
     p Enter your photo for OCR processing.
+    div(id='error', style="width: 360px; height: 20px; border: 5px; background: white;")
     form(action='/uploadFile', method='post', enctype='multipart/form-data', id='form' target)
         div
             label Upload Image
@@ -11,7 +12,7 @@ html
         input(id='image', type='file', name='uploadedFile')
         div
             input(type='submit', id='submit')
-    div(style="width: 360px; height: 320px; border: 5px; background: white;")
+    div(id='containerImage', style="width: 360px; height: 320px; border: 5px; background: white;")
         img(id='previewImage', src='', style="max-width: 360px; max-height: 320px; border: 2px;")
     textarea(id="result", rows=10, cols=50)
 
