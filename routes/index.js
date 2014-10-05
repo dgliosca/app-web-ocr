@@ -24,7 +24,7 @@ exports.uploadFile = function(req, res, next) {
 			    if (err) {
 			        console.error(err);
 			    } else {	
-					res.json({ "result" : text});
+					res.json({ "text" : text});
 				}
 			});
 		});
