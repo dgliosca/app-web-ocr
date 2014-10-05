@@ -1,0 +1,16 @@
+html
+	head
+	title #{title}
+
+	body
+	h1 #{title}
+	p Enter your photo for OCR processing.
+	form(action='/uploadFile', method='post', enctype='multipart/form-data')
+		
+		div
+			label Upload Image
+			input(type='file', name='uploadedFile')
+		div
+			input(type='submit')
+	script(type='text/javascript', src='./jquery-2.1.1.min.js')
+	script(type='text/javascript', src='./application.js')
