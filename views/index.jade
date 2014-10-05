@@ -11,8 +11,9 @@ html
         input(id='image', type='file', name='uploadedFile')
         div
             input(type='submit', id='submit')
-    img(id='previewImage', src='')
-    textarea(id="result")
+    div(style="width: 360px; height: 320px; border: 5px; background: white;")
+        img(id='previewImage', src='', style="max-width: 360px; max-height: 320px; border: 2px;")
+    textarea(id="result", rows=10, cols=50)
 
     script(type='text/javascript', src='./jquery-2.1.1.min.js')
     script(type='text/javascript', src='./application.js')
