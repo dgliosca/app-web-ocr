@@ -26,7 +26,6 @@ exports.uploadFile = function(req, res, next) {
 				next(err); 
 			}
 			console.log('File uploaded to: ' + target_path + ' - ' + uploadedFile.size + ' bytes');
-			console.log('File properties ' + req.files.path);
 			var returnValue;
 			
 				// Recognize text of any language in any format
