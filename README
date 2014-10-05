@@ -1,0 +1,5 @@
+To run the app you need to install tesseract:
+https://code.google.com/p/tesseract-ocr/
+
+To install it on Mac:
+brew install tesseract --all-languages
